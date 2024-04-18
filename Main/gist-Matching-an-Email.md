@@ -140,7 +140,15 @@ In the "Matching an Email" regex, the boundaries and the grouping together defin
 
 ### Back-references
 
+Back-references are used to refer to a previously matched subexpression. They are written as \n with n=1, 2, 3, and so on.
+
+In the "Matching an Email" regex, there is no back-references. However, if we use ([a-z0-9_\.-]+)\1, it will match something like string1string1
+
 ### Look-ahead and Look-behind
+
+Look-ahead and Look-behind are used to match something ahead or behind a regex. They are written as (?=) and (?<=); and negative look-ahead and negative look-behind are written as (?!) and (?<!).
+
+In the "Matching an Email" regex, there is no look-ahead and look-behind, but for example with (?!\d), the updated regex .([a-z\.]{2,6}(?!\d))$/ can exclude the top level domain ending with number which is not a valid domain.
 
 ## Author
 
